@@ -1,0 +1,631 @@
+/* ==========================================
+   Electronics Shop - Japanese Minimalist Style
+   ========================================== */
+
+/* ===== Variables & Colors ===== */
+:root {
+    /* Playful student palette */
+    --primary-color: #ff6b6b;   /* coral red */
+    --secondary-color: #ffd166; /* soft yellow */
+    --accent-color: #4ecdc4;    /* mint teal */
+    --success-color: #06d6a0;
+    --warning-color: #ffb703;
+    --light-bg: #fffaf0;
+    --border-color: #ffe6e6;
+    --text-primary: #2b2b2b;
+    --text-secondary: #6b6b6b;
+    --white: #ffffff;
+    --transition: all 0.2s ease;
+}
+
+/* ===== General Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Use Arial as the global font */
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    /* Simpler navbar with thin border to look more like a student project */
+    border-bottom: 1px solid #cccccc;
+    background-color: var(--light-bg) !important;
+    padding: 0.6rem 0;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--primary-color) !important;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: var(--secondary-color) !important;
+}
+
+.nav-link {
+    color: var(--text-primary) !important;
+    font-weight: 400;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* ===== Banner Slider ===== */
+.banner-slider {
+    margin-bottom: 0;
+}
+
+.banner-image {
+    height: 280px;
+    object-fit: cover;
+    filter: none;
+}
+
+.carousel-caption-custom {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+.carousel-caption-custom h1 {
+    font-weight: 600;
+}
+
+.carousel-caption-custom p {
+    /* no heavy text-shadow for simpler look */
+}
+
+.carousel-indicators {
+    margin-bottom: 1rem;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+.carousel-indicators button.active {
+    background-color: white;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: none; /* hide heavy controls for simpler look */
+}
+
+/* Promo Section */
+.promo-section {
+    background-color: var(--primary-color);
+}
+
+.promo-section i {
+    display: block;
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.view-all-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.view-all-link:hover {
+    color: var(--secondary-color);
+}
+
+.view-all-link i {
+    margin-left: 0.25rem;
+    font-size: 0.85rem;
+}
+
+/* ===== Cards ===== */
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.card:hover {
+    /* no special hover effects */
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ===== Buttons ===== */
+.btn {
+    border-radius: 0;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-outline-dark {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+    background-color: transparent;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--text-primary);
+    border-color: var(--text-primary);
+    color: var(--white);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: var(--white);
+}
+
+.btn-success:hover {
+    background-color: #229954;
+    border-color: #229954;
+}
+
+/* ===== Forms ===== */
+.form-control,
+.form-select {
+    border-radius: 0;
+    border: 1px solid var(--border-color);
+    padding: 0.625rem 0.875rem;
+    transition: var(--transition);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+    outline: none;
+}
+
+.form-label {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Tables ===== */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead th {
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    font-weight: 500;
+    color: var(--text-primary);
+    padding: 1rem;
+}
+
+.table tbody td {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+/* ===== Alerts ===== */
+.alert {
+    border-radius: 0;
+    border-left: 4px solid;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: var(--success-color);
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: var(--accent-color);
+    color: #721c24;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: var(--primary-color);
+    color: #0c5460;
+}
+
+/* ===== Badge ===== */
+.badge {
+    border-radius: 2px;
+    padding: 0.35rem 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: auto;
+    border-top: 2px solid var(--border-color);
+    background-color: var(--light-bg);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--text-secondary);
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* ===== Product Grid ===== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* ===== Animations ===== */
+/* Removed animation keyframes for simpler, student-like appearance */
+
+/* ===== Admin Styles ===== */
+.sidebar {
+    background-color: var(--light-bg);
+    border-right: 1px solid var(--border-color);
+    min-height: 100vh;
+}
+
+.list-group-item {
+    border-radius: 0;
+    border: none;
+    border-left: 3px solid transparent;
+    transition: var(--transition);
+}
+
+.list-group-item.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-left-color: var(--primary-color);
+    font-weight: 500;
+}
+
+.list-group-item:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-left-color: var(--primary-color);
+}
+
+/* ===== Spacing & Layout ===== */
+section {
+    padding: 3rem 0;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* ===== Hover Effects ===== */
+
+/* ===== Utilities ===== */
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.border-start-accent {
+    border-left: 3px solid var(--accent-color);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .banner-image {
+        height: 250px;
+    }
+    
+    .carousel-caption-custom h1 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-caption-custom p {
+        font-size: 0.9rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    section {
+        padding: 2rem 0;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* ===== Loading State ===== */
+.spinner-border {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-width: 0.2rem;
+}
+
+/* ===== Price Display ===== */
+.text-primary.fw-bold,
+.text-primary.fs-5 {
+    color: var(--accent-color) !important;
+    font-weight: 600 !important;
+}
+
+/* ===== E-commerce Layout ===== */
+.categories-section,
+.products-section,
+.why-choose-section {
+    padding: 3rem 0;
+}
+
+/* Category Cards with Background Image */
+.category-card {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    transition: background 0.3s ease;
+}
+
+.category-card:hover .category-overlay {
+    background: linear-gradient(to bottom, rgba(52, 152, 219, 0.7), rgba(41, 128, 185, 0.9));
+}
+
+.category-name {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-shadow: none;
+}
+
+.category-desc {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    margin: 0;
+    text-align: center;
+    text-shadow: none;
+}
+
+/* Feature Cards */
+.feature-card {
+    text-align: center;
+    padding: 2rem 1rem;
+    height: 100%;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
+    background-color: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.feature-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.feature-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ===== Search Box ===== */
+.d-flex.me-3 input {
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+}
+
+.d-flex.me-3 input:focus {
+    border-color: var(--text-primary);
+}
+
+/* ===== Modal ===== */
+.modal-content {
+    border-radius: 0;
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* ===== Simplify interactions: remove heavy hover effects ===== */
+/* Hide small carousel indicator buttons under the banner */
+.carousel-indicators {
+    display: none !important;
+}
+
+/* Remove transform/hover transitions on category cards */
+.category-card {
+    transition: none !important;
+}
+.category-card:hover {
+    transform: none !important;
+}
+.category-card .category-overlay {
+    transition: none !important;
+    /* keep a simple subtle overlay */
+    background: rgba(0,0,0,0.35);
+}
+.category-card:hover .category-overlay {
+    background: rgba(0,0,0,0.35) !important;
+}
+
+/* Disable other hover highlights */
+.list-group-item:hover {
+    background-color: transparent !important;
+    border-left-color: transparent !important;
+}
+.navbar-brand:hover,
+.nav-link:hover,
+.view-all-link:hover,
+.btn:hover {
+    color: inherit !important;
+    background-color: inherit !important;
+    filter: none !important;
+}
+
+/* Turn off subtle transitions site-wide for a simpler feel */
+*:not(input):not(textarea):not(select) {
+    transition: none !important;
+}

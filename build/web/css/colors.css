@@ -1,0 +1,56 @@
+/* ===== Additional Color Classes ===== */
+
+/* Background Colors */
+.bg-primary-light {
+    background-color: #ebf5fb !important;
+}
+
+.bg-success-light {
+    background-color: #d5f4e6 !important;
+}
+
+.bg-warning-light {
+    background-color: #fef5e7 !important;
+}
+
+/* Text Colors */
+.text-primary-custom {
+    color: var(--primary-color) !important;
+}
+
+.text-success-custom {
+    color: var(--success-color) !important;
+}
+
+.text-warning-custom {
+    color: var(--warning-color) !important;
+}
+
+/* Border Colors */
+.border-primary-custom {
+    border-color: var(--primary-color) !important;
+}
+
+.border-top-primary {
+    border-top: 3px solid var(--primary-color) !important;
+}
+
+.border-left-primary {
+    border-left: 3px solid var(--primary-color) !important;
+}
+
+/* Category Color Badges */
+.badge-primary-custom {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.badge-success-custom {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.badge-warning-custom {
+    background-color: var(--warning-color);
+    color: white;
+}
